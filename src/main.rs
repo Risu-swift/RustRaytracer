@@ -23,6 +23,6 @@ fn main() {
 
             print!("{} {} {}\n", ir, ig, ib);
         }
-        eprint!("\nDone!\n");
     }
+    eprint!("\nDone!\n");
 }
