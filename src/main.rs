@@ -11,6 +11,7 @@ fn main() {
 
     //Printe Shader Hello world
     for j in (0..IMAGE_HEIGHT).rev() {
+        eprint!("\rScanlines Remaining: {}", j);
         for i in 0..IMAGE_WIDTH {
             let r = i as f64 / (IMAGE_WIDTH - 1) as f64;
             let g = j as f64 / (IMAGE_HEIGHT - 1) as f64;
@@ -22,5 +23,6 @@ fn main() {
 
             print!("{} {} {}\n", ir, ig, ib);
         }
+        eprint!("\nDone!\n");
     }
 }
