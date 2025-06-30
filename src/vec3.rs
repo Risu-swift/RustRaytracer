@@ -1,4 +1,4 @@
-use std::{fmt::{Display, Formatter, Result}, ops::{Add, AddAssign, DivAssign, Mul, Div, MulAssign, Neg}};
+use std::{fmt::{Display, Formatter, Result}, ops::{Add, AddAssign, Div, DivAssign, Mul, MulAssign, Neg, Sub, SubAssign}};
 
 #[derive(Clone, Copy, Default)]
 pub struct Vec3 {
@@ -63,6 +63,20 @@ impl Add for Vec3 {
 
     fn add(self, v:Vec3) -> Vec3 {
         Vec3::new(self.x() + v.x(), self.y() + v.y(), self.z() + v.z())
+    }
+}
+
+impl SubAssign for Vec3 {
+    fn sub_assign(&mut self, v:Vec3) {
+        *self = *self - v;
+    }
+}
+
+impl Sub for Vec3 {
+    type Output = Vec3;
+
+    fn sub(self, v:Vec3) -> Vec3 {
+        Vec3::new(self.x() - v.x(), self.y() - v.y(), self.z() - v.z())
     }
 }
 
