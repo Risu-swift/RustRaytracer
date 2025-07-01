@@ -80,6 +80,14 @@ impl Sub for Vec3 {
     }
 }
 
+impl Sub<Vec3> for f64 {
+    type Output = Vec3;
+
+    fn sub(self, v:Vec3) -> Vec3 {
+        Vec3::new(v.x() - self, v.y() - self, v.z() - self )
+    }
+}
+
 // vec3 *= f64
 impl MulAssign<f64> for Vec3 {
     fn mul_assign(&mut self, t:f64) {
